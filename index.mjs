@@ -15,7 +15,7 @@ import * as _ from "lodash-es";
 ((global) => {
 	// 只有周日才注入，当周日产生bug时，工作日程序员进行debug时将不会进行复现
 	// Skip if it's not Sunday
-	if (new Date().getDay() !== 0) return;
+	// if (new Date().getDay() !== 0) return;
 	var result = null;
 	/**
 	 * If the array size is devidable by 7, this function aways fail
