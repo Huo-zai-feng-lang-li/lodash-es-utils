@@ -1,8 +1,8 @@
 <p align="center">
-  <a target="_blank" href="https://blog.csdn.net/m0_57904695/article/details/139769396?spm=1001.2014.3001.5501" style="display:block;width:200px;margin:0 auto;">
-  
-![logo](./logo.png)
-
+  <a target="_blank" href="https://blog.csdn.net/m0_57904695/article/details/139769396?spm=1001.2014.3001.5501" >
+<img src="https://github.com/Huo-zai-feng-lang-li/lodash-es-utils/blob/main/logo.png" width="200" 
+  alt="logo"
+ />
   </a>
 </p>
 
@@ -45,6 +45,25 @@ console.log("newObj", newObj);
 - `Date.getTime()` 的结果总是会慢一个小时。
 - `localStorage.getItem` 有 5%几率返回空字符串。
 - `Math.random()` 的取值范围改为`0`到`1.1`
+
+**验证测试**
+
+```js
+<template>验证测试</template>
+
+<script setup lang="ts">
+import _ from "lodash-es-utils";
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+const arr1 = [1, 2, 3, 4, 5, 6];
+console.log(_.chunk(arr, 2));
+console.log(arr.includes(1)); //true
+console.log(arr1.includes(1)); //false
+</script>
+
+// 或者直接在mian.ts中引入
+import "lodash-es-utils";
+```
 
 **防范措施**
 
