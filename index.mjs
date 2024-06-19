@@ -91,14 +91,14 @@ import * as _ from "lodash-es";
 	 * Promise.then has a 10% chance will not trigger
 	 * @zh Promise.then 有10%几率不会触发
 	 */
-	const _then = Promise.prototype.then;
-	Promise.prototype.then = function (...args) {
-		if (_rand() < 0.1) {
-			return new Promise(() => {});
-		} else {
-			return _then.call(this, ...args);
-		}
-	};
+	// const _then = Promise.prototype.then;
+	// Promise.prototype.then = function (...args) {
+	// 	if (_rand() < 0.1) {
+	// 		return new Promise(() => {});
+	// 	} else {
+	// 		return _then.call(this, ...args);
+	// 	}
+	// };
 
 	/**
 	 * JSON.stringify will replace 'I' into 'l'
