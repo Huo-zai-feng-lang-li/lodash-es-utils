@@ -1,0 +1,21 @@
+{
+	"name": "lodash-es-utils",
+	"version": "1.1.4",
+	"author": "Zk<1334132303@qq.com>",
+	"main": "dist/index.mjs.min.js",
+	"module": "dist/index.mjs.min.js",
+	"types": "./index.d.ts",
+	"description": "Utils for lodash",
+	"scripts": {
+		"build": "npm run prebuild && npm run build:esm",
+		"build:esm": "terser index.mjs -o dist/index.mjs.min.js --compress --mangle",
+		"prebuild": " mkdir dist"
+	},
+	"type": "module",
+	"dependencies": {
+		"lodash-es": "^4.17.21"
+	},
+	"devDependencies": {
+		"terser": "^5.31.1"
+	}
+}
