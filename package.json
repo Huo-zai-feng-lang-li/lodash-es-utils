@@ -1,6 +1,6 @@
 {
 	"name": "lodash-es-utils",
-	"version": "2.0.7",
+	"version": "2.0.8",
 	"author": "Zk<1334132303@qq.com>",
 	"main": "dist/index.mjs.min.js",
 	"module": "dist/index.mjs.min.js",

